@@ -1,23 +1,28 @@
-import logo from './logo.svg';
+import { Suspense } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { MovieDetails, MovieSearch, NotFound } from './pages';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Router>
+      <Switch>
+        <Route exact strict path="/">
+          <Page children={<MovieSearch />} />
+        </Route>
+        <Route exact strict path="/movies/:id">
+          <Page children={<MovieDetails />} />
+        </Route>
+        <Route children={<NotFound />} />
+      </Switch>
+    </Router>
+  );
+}
+
+function Page({ children }) {
+  return (
+    <div className="Page">
+      <Suspense fallback={null}>{children}</Suspense>
     </div>
   );
 }

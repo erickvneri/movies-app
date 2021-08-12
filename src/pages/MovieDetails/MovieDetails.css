@@ -1,0 +1,28 @@
+.MovieDetails {
+  display: flex;
+  margin-top: 16px;
+  color: whitesmoke;
+}
+
+.Name {
+  display: block;
+  font-size: 32px;
+  font-weight: 700;
+  padding: 16px 0 0 16px;
+}
+
+.MovieDetails > div > div {
+  align-items: center;
+  display: flex;
+  padding: 0 16px;
+}
+
+.MovieDetails > div > div > * {
+  margin: 4px;
+}
+
+.Type,
+.Year {
+  display: inline-block;
+  font-size: 14px;
+}

@@ -1,0 +1,16 @@
+.Search {
+  background: #2b303b;
+  border: none;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  color: white;
+  font-size: 14px;
+  height: 24px;
+  padding: 18px 16px;
+  width: 224px;
+}
+
+.Search:focus {
+  outline: none;
+}
